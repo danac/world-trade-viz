@@ -135,6 +135,6 @@ A set of custom Circos configuration files are used to generate the diagrams.
 Sample
 ------
 
-The following shows the production and trade of soybeans around the world. Each ribbon represents a trade between two regions and is colored according to the exporting region's color.
+The following shows the production and trade of soybeans around the world. Each ribbon represents a trade between two regions and is colored according to the exporting region's color. Quantities are given in millions of tonnes.
 
 ![World-wide soybean trade in 2011](https://bitbucket.org/danachristen/world-trade-viz/raw/master/doc/soybeans_2011.jpg)
