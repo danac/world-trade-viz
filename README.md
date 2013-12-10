@@ -1,10 +1,12 @@
 
 This projects aims at graphically representing world-wide trade statistics for a selection of commodities during the 2000s in a visually intuitive way.
 
+Victoria Junquera & Dana Christen, December 2013.
+
 Tabular data as circular diagrams
 =================================
 
-The visualistion technique used in this project is inspired by the work of a Canadian research team on genomic data visualization (see Krzywinski M. <em>et al.</em>, Circos: an information aesthetic for comparative genomics., *Genome Res.*, Sep. 2009, 19(9):1639-45).
+The visualistion technique used in this project is inspired by the work of a Canadian research team on genomic data visualization (see Krzywinski M. *et al.*, Circos: an information aesthetic for comparative genomics., *Genome Res.*, Sep. 2009, 19(9):1639-45).
 
 To address the challenge of visualizing similarities and differences arising from genome comparisons, Krzywinski's team uses circular ideograms showing the relationships between genes as ribbons linking colored arc segments:
 
