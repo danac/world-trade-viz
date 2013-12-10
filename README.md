@@ -132,5 +132,9 @@ A set of custom Circos configuration files are used to generate the diagrams.
 
 > **Source code relevant to diagram generation is to be found in the run/ folder of the repository.**
 
+Sample
+------
 
+The following shows the production and trade of soybeans around the world. Each ribbon represents a trade between two regions and is colored according to the exporting region's color.
 
+![World-wide soybean trade in 2011](https://bitbucket.org/danachristen/world-trade-viz/raw/master/doc/soybeans_2011.jpg)
