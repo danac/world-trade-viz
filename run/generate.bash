@@ -9,7 +9,7 @@ CONF_FILE=
 
 if echo "$1" | grep --quiet "without_productions"
 then
-    CONF_FILE=parse-table-without-produtions.conf
+    CONF_FILE=parse-table-without-productions.conf
 else
     CONF_FILE=parse-table.conf
 fi
@@ -17,7 +17,8 @@ fi
 TMP_DIR=/tmp/$BASE_NAME
 mkdir $TMP_DIR
 #tar xvf circos-conf.tar.gz -C $TMP_DIR
-cp -v ./etc/ $TMP_DIR
+cp -rv ./etc/ $TMP_DIR
+cp -v *.py $TMP_DIR
 pushd $TMP_DIR
 mkdir results
 
