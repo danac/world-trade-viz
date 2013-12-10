@@ -1,0 +1,1 @@
+../src/svg_name_fix.py
