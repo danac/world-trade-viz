@@ -21,23 +21,37 @@
 # This file contains the main program.
 
 from faostat_trade_data import FAOStatTradeData
-import os.path, sys
-from glob import glob
+import os.path, sys, os
 
 if __name__ == "__main__":
 
     data_dir = sys.argv[1]
     output_dir = sys.argv[2]
+    commodities = ("Wheat", "Maize", "Soybeans")
+    years = range(2000, 2012)
 
     data_structure = FAOStatTradeData()
     data_structure.load_regions(os.path.join(data_dir, "regions.csv"))
     data_structure.load_country_regions(os.path.join(data_dir, "country_regions.csv"))
 
-    for data_file in glob(os.path.join(data_dir, "TradeMatrix*")):
+    for commodity in commodities:
+        data_file = os.path.join(data_dir, commodity, "TradeMatrix_2000-2002.xml")
         data_structure.load_trade_data(data_file)
-    data_structure.load_production_data(os.path.join(data_dir, "StatisticalDataProductionWheat2000-11.xml"))
+        data_file = os.path.join(data_dir, commodity, "TradeMatrix_2003-2005.xml")
+        data_structure.load_trade_data(data_file)
+        data_file = os.path.join(data_dir, commodity, "TradeMatrix_2006-2008.xml")
+        data_structure.load_trade_data(data_file)
+        data_file = os.path.join(data_dir, commodity, "TradeMatrix_2009-2011.xml")
+        data_structure.load_trade_data(data_file)
+        data_structure.load_production_data(os.path.join(data_dir, commodity,  "Production_2000-2012.xml"))
 
-    years = range(2000, 2012)
     for year in years:
-        data_structure.save_trade_matrix(year, "Wheat", os.path.join(output_dir, "{}_Wheat.txt".format(year)), threshold = 10, with_production=True)
+        for commodity in commodities:
+            target_folder = os.path.join(output_dir, commodity)
+            try:
+                os.mkdir(target_folder)
+            except OSError:
+                pass
+            data_structure.save_trade_matrix(year, commodity, os.path.join(target_folder, "{}_{}.txt".format(commodity, year)), threshold = 10, with_production=True)
+            data_structure.save_trade_matrix(year, commodity, os.path.join(target_folder, "{}_{}_without_productions.txt".format(commodity, year)), threshold = 10, with_production=False)
 
