@@ -1,6 +1,8 @@
 #!/bin/sh
 
-## @file This script generates circular diagrams for a given tabular file matching the requirement of the tableviewer program in the circos-tools package
+## @file This script generates circular diagrams for a given tabular file matching the requirement of the tableviewer program in the circos-tools package. It must be run from within the directory it lives in!
+
+export PATH=$(readlink -f ../third-party/circos-0.64/bin/):$(readlink -f ../third-party/circos-tools-0.16/tools/tableviewer/bin/):$PATH
 
 DATA_FILE=$(readlink -f $1)
 FILE_NAME=$(basename "$DATA_FILE")
@@ -16,19 +18,22 @@ fi
 
 TMP_DIR=/tmp/$BASE_NAME
 mkdir $TMP_DIR
-#tar xvf circos-conf.tar.gz -C $TMP_DIR
+
 cp -rv ./etc/ $TMP_DIR
 cp -v *.py $TMP_DIR
 pushd $TMP_DIR
 mkdir results
 
-parse-table -conf etc/$CONF_FILE -file $DATA_FILE -segment_order=ascii,size_desc -placement_order=row,col -intra_cell_handling=hide -interpolate_type count  -color_source row -transparency 2 -fade_transparency 0 -ribbon_bundle_order=size_asc -ribbon_layer_order=size_asc | make-conf -dir data 
+parse-table -conf etc/$CONF_FILE -file $DATA_FILE -segment_order=ascii,size_desc -placement_order=row,col -intra_cell_handling=hide -interpolate_type count  -color_source row -transparency 2 -fade_transparency 0 -ribbon_bundle_order=size_asc -ribbon_layer_order=size_asc | make-conf -dir data
 
 circos  -conf etc/circos.conf
 
 ./svg_name_fix.py results/circos-table-conf-large.svg results/${FILE_NAME%.*}.svg
 
-rsvg-convert results/${BASE_NAME}.svg | convert png:- -background white -flatten results/${FILE_NAME%.*}.jpg
+rsvg-convert results/${BASE_NAME}.svg | convert png:- -units PixelsPerInch -background white -density 300 -flatten -trim -bordercolor White results/${FILE_NAME%.*}.jpg
+
+inkscape -f results/${BASE_NAME}.svg -E results/${BASE_NAME}.eps
+epstopdf --outfile=results/${BASE_NAME}.pdf results/${BASE_NAME}.eps
 
 rm -v results/circos*
 
