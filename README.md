@@ -138,3 +138,14 @@ Sample
 The following shows the production and trade of soybeans around the world. Each ribbon represents a trade between two regions and is colored according to the exporting region's color. Quantities are given in millions of tonnes.
 
 ![World-wide soybean trade in 2011](https://bitbucket.org/danachristen/world-trade-viz/raw/master/doc/soybeans_2011.jpg)
+
+Requirements and deployement
+============================
+
+The Python program used to parse data from the FAOStat website has no external dependencies.
+
+The image generation script has several dependencies which are listed in the README.md file in the run/ folder.
+
+Generating the code documentation requires Doxygen.
+
+The code consists exclusively of interpreted code and scripts. Everything can be run from within the trunk since no file has to be built.
