@@ -57,7 +57,7 @@ if __name__ == "__main__":
     """
 
     try:
-        os.path.mkdir("latex")
+        os.mkdir("latex")
     except OSError:
         pass
 
