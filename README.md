@@ -114,10 +114,10 @@ Data files matching the specifications required by the Circos helper script are 
 The script is compatible with Python 2.x only (mainly because of the divergence in Unicode handling between the two versions). This choice was motivated by the fact that the *Enthought Python Distribution* (now *Enthought Canopy*), a widely-used Python distribution among Windows users, has not been ported to Python 3.x yet.
 
 Besides the creation of a data file matching the requirements of the *tableviewer* script introduced above, the Python script also implements the following functionalities:
- - support for internationalized country names
- - aggregation of country-wise data into regions
- - support for loading data scattered across an arbitrary number of XML files
- - support for manual ordering of regions
+    - support for internationalized country names
+    - aggregation of country-wise data into regions
+    - support for loading data scattered across an arbitrary number of XML files
+    - support for manual ordering of regions
 
  > **Source code relevant to the conversion step is located in the src/ folder of the repository.**
 
