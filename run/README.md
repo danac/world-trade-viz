@@ -1,10 +1,12 @@
 This folder contains the scripts and code used to generate the diagrams.
 
 The following dependencies are required by the image generation script:
+
     - Circos (the version included in the third-party folder)
     - the Circos tableviewer tool (included in the third-party folder)
     - the Perl interpreter
     - the Perl modules required by Circos and tableviewer:
+
         - Config::General (v2.50 or later)
         - Font::TTF
         - GD
@@ -20,6 +22,7 @@ The following dependencies are required by the image generation script:
         - Statistics::Descriptive
 
 The script also relies on the following image processing libraries, used to generate the diagrams in various file formats.
+
     - ImageMagick
     - Inkscape
     - librsvg
