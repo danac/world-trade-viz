@@ -145,7 +145,7 @@ Requirements and deployement
 
 The Python program used to parse data from the FAOStat website has no external dependencies.
 
-The image generation script has several dependencies which are listed in the README.md file in the run/ folder.
+The image generation script has several dependencies which are listed in the README file in the run/ folder.
 
 Generating the code documentation requires Doxygen.
 
