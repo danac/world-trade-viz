@@ -668,7 +668,7 @@ WARN_LOGFILE           =
 # directories like "/usr/src/myproject". Separate the files or directories
 # with spaces.
 
-INPUT                  =  ../src/ ../README.md
+INPUT                  =  ../src/faostat_main.py ../src/faostat_trade_data.py ../README.md ../run/generate_latex.py
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is
