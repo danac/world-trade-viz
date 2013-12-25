@@ -25,7 +25,7 @@ This functionality is available online on the website of Circos' author at <http
 
 Circos and the helper script (called *tableviewer* and available in the "circos-tools" package) can be downloaded at <http://circos.ca/software/download>.
 
-The helper script has several requirements on the format of the input data files. These requirements are introduced at <http://mkweb.bcgsc.ca/tableviewer/samples/#5>. Typically, a 7-by-7 table is expected to be passed to the script in the following form:
+The helper script has several requirements on the format of the input data files. These requirements are introduced at <http://mkweb.bcgsc.ca/tableviewer/samples/#5>. For example, a 7-by-7 table is expected to be passed to the script in the following form:
 
     data	data	data	A	B	C	D	E	F	G
     5	3000	A	105	450	92	96	5	301	195
