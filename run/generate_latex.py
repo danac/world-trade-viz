@@ -72,7 +72,7 @@ if __name__ == "__main__":
 \usepackage{framed}
 
 \graphicspath{{../../run/results/}}
-
+\pagenumbering{gobble}
 \author{Victoria Junquera \& Dana Christen}
 \title{
 \begin{framed}
@@ -97,9 +97,9 @@ if __name__ == "__main__":
     table_template = r"""
 \begin{center}
 \begin{tabular}{@{}cc@{}}
-\includegraphics[width=.5\linewidth]{%%COMMODITY%%_%%YEAR1%%%%SUFFIX%%.%%EXT%%} &
-\includegraphics[width=.5\linewidth]{%%COMMODITY%%_%%YEAR2%%%%SUFFIX%%.%%EXT%%} \\
-\tiny \textbf{%%YEAR1%%} & \tiny \textbf{%%YEAR2%%}
+\includegraphics[width=.45\linewidth]{%%COMMODITY%%_%%YEAR1%%%%SUFFIX%%.%%EXT%%} &
+\includegraphics[width=.45\linewidth]{%%COMMODITY%%_%%YEAR2%%%%SUFFIX%%.%%EXT%%} \\
+\tiny \textbf{%%COMMODITY%% %%YEAR1%%} & \tiny \textbf{%%COMMODITY%% %%YEAR2%%}
 \end{tabular}
 \end{center}
     """
